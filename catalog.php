@@ -1,7 +1,14 @@
 <?php
 session_start();
 
-$mysqli = new mysqli("MySQL-8.0", "root", "", "db_bikes");
+// Подключаем config.php с правильными данными для хостинга
+require_once './php/config.php';
+
+// Проверяем подключение
+if ($mysqli->connect_error) {
+    die("Ошибка подключения к БД: " . $mysqli->connect_error);
+}
+
 
 $search = trim($_GET['search'] ?? '');
 
@@ -182,12 +189,11 @@ $stmt->close();
             <h2>Наши велосипеды</h2>
             <div class="catalog__filter">
                 <div class="filter__type">
-                    <div class="filter__type__item"><a href="./php/products/products.php?type=all">Все</a></div>
-                    <div class="filter__type__item"><a href="./php/products/products.php?type=city">Городские</a></div>
-                    <div class="filter__type__item"><a href="./php/products/products.php?type=electro">Электро</a></div>
-                    <div class="filter__type__item"><a href="./php/products/products.php?type=family">Семейные</a></div>
-                    <div class="filter__type__item"><a href="./php/products/products.php?type=speed">Скоростные</a>
-                    </div>
+                    <div class="filter__type__item"><a href="catalog.php?type=all">Все</a></div>
+                    <div class="filter__type__item"><a href="catalog.php?type=city">Городские</a></div>
+                    <div class="filter__type__item"><a href="catalog.php?type=electro">Электро</a></div>
+                    <div class="filter__type__item"><a href="catalog.php?type=family">Семейные</a></div>
+                    <div class="filter__type__item"><a href="catalog.php?type=speed">Скоростные</a></div>
                 </div>
                 <div class="filter__search">
                     <form action="catalog.php" method="get">

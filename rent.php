@@ -1,7 +1,14 @@
 <?php
 session_start();
 
-$mysqli = new mysqli("MySQL-8.0", "root", "", "db_bikes");
+// Подключаем config.php с правильными данными для хостинга
+require_once './php/config.php';
+
+// Проверяем подключение
+if ($mysqli->connect_error) {
+    die("Ошибка подключения к БД: " . $mysqli->connect_error);
+}
+
 
 if (empty($_SESSION["user_role"]) || empty($_SESSION["user_id"])) {
     header("Location: ./register.php");

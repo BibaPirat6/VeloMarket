@@ -1,8 +1,14 @@
 <?php
 
 session_start();
+// Подключаем config.php с правильными данными для хостинга
+require_once './php/config.php';
 
-$mysqli = new mysqli("MySQL-8.0", "root", "", "db_bikes");
+// Проверяем подключение
+if ($mysqli->connect_error) {
+    die("Ошибка подключения к БД: " . $mysqli->connect_error);
+}
+
 
 if (empty($_SESSION["user_id"])) {
     die("У тебя нету id");

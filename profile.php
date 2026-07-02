@@ -117,7 +117,7 @@ require_once "./php/profileData.php";
                             foreach ($data as $key => $order): ?>
                                 <div class="profile__item">
                                     <div class="profile__item__content">
-                                        <img src="./php/products/image.php?id=<?php echo $order['product_id']; ?>">
+                                        <img src="/php/products/image.php?id=<?php echo $order['product_id']; ?>">
 
 
                                         <div class="profile__item__content__info">
@@ -156,7 +156,7 @@ require_once "./php/profileData.php";
                                 <div class="profile__item_container">
                                     <div class="profile__item">
                                         <div class="profile__item__content">
-                                            <img src="./php/products/image.php?id=<?php echo $order['product_id']; ?>">
+                                            <img src="/php/products/image.php?id=<?php echo $order['product_id']; ?>">
 
 
                                             <div class="profile__item__content__info">
@@ -235,7 +235,7 @@ require_once "./php/profileData.php";
                                 <div class="profile__item_container">
                                     <div class="profile__item">
                                         <div class="profile__item__content">
-                                            <img src="./php/products/image.php?id=<?php echo $order['product_id']; ?>">
+                                            <img src="/php/products/image.php?id=<?php echo $order['product_id']; ?>">
 
 
                                             <div class="profile__item__content__info">

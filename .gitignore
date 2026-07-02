@@ -1,6 +1,5 @@
-# Конфигурационные файлы с чувствительными данными
+# Конфигурационные файлы
 config.php
 *.config.php
-*.env
-.env.local
-.env.*.local
+php/config.php
+php/*.config.php

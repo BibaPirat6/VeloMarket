@@ -1,0 +1,5 @@
+# Конфигурационные файлы
+config.php
+*.config.php
+php/config.php
+php/*.config.php
